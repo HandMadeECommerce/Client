@@ -14,7 +14,7 @@ export default function Navbar() {
               className="h-8"
               alt="Flowbite Logo"
             />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            <span className="self-center  whitespace-nowrap text-2xl font-semibold dark:text-white">
               Logo
             </span>
           </a>
