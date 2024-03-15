@@ -1,13 +1,13 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/layout/NavBar";
 
 export const Route = createRootRoute({
   notFoundComponent: () => {
     return <p>Not found (in _layout)</p>;
   },
   component: () => (
-    <div className="font-roboto dark:bg-black dark:text-white">
+    <div className="font-roboto ">
       <Navbar />
       <Outlet />
       <TanStackRouterDevtools />
