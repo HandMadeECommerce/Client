@@ -10,14 +10,13 @@ export default function Navbar() {
     queryFn: () => localStorage.getItem("counter"),
   });
 
-  const data: unknown = queryClient.getQueryData(["productInTheCart"]);
+  const data = queryClient.getQueryData(["productInTheCart"]);
 
-  const [counter, setCounter] = useState(
-    Number(localStorage.getItem("counter")) || 0,
-  );
+  const [counter, setCounter] = useState(Number(data) || 0);
 
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
+      cartProducts;
       if (e.key === "counter") {
         setCounter(Number(e.newValue) || 0);
       }
@@ -65,7 +64,7 @@ export default function Navbar() {
                 <Link to="/cart" className="text-gray-900 [&.active]:font-bold">
                   Cart
                   <span className="rounded-full border border-black px-1 text-sm">
-                    {data}
+                    {counter}
                   </span>
                 </Link>
               </li>

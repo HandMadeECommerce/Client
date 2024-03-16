@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { queryClient } from "../main";
+import Button from "./buttons/Button";
 
 type CardProps = {
   photo: string;
@@ -27,22 +28,20 @@ const Card: React.FC<CardProps> = ({ photo, name, price }) => {
           <div className="mb-2 text-xl font-bold">{name}</div>
           <p className="text-base text-gray-700">{price}</p>
         </div>
-        <button
-          onClick={incrementCounter}
-          className="mx-6 transform rounded-lg bg-green-500 px-6 py-2 font-bold transition-transform duration-300 ease-in-out hover:scale-110"
-        >
+        <Button onClick={incrementCounter} variant={"buy"} size={"lg"}>
           Buy
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={() => {
             localStorage.setItem("counter", "0");
             queryClient.setQueryData(["productInTheCart"], 0);
           }}
-          className="mx-6 transform rounded-lg bg-green-500 px-6 py-2 font-bold transition-transform duration-300 ease-in-out hover:scale-110"
+          variant={"cancel"}
+          size={"lg"}
         >
           clear
-        </button>
+        </Button>
       </div>
     </div>
   );
